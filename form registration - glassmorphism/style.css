@@ -1,0 +1,192 @@
+:root {
+    --green: #38ccae;
+    --dark: #1b1b1b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--green);
+    background: linear-gradient(to right top, var(--dark), var(--green));
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    max-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.75);
+    background: linear-gradient(to right top, rgba(0, 0, 0, 0.75 ), rgba(0, 0, 0, 0.25));
+    padding: 32px 92px;
+    border-radius: 35px; 
+    position: relative;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    overflow: auto;
+}
+
+.bg_img {
+    position: absolute;
+}
+
+.bg_img--button1 {
+    position: absolute;
+    top: 0;
+    right: 66%;
+    height: 20vh;
+    animation: slideDown 7s linear infinite;
+}
+.bg_img--button2 {
+    position: absolute;
+    top: -20vh;
+    right: 77%;
+    height: 20vh;
+    animation: slideDown2 7s linear infinite;
+}
+
+
+.bg_img--ball {
+    top: 12vh;
+    left: 71%;
+    height: 40vh;
+    animation: rotate linear infinite 16s;
+    opacity: 0.50;
+}
+
+.bg_img--logo {
+    left: 0;
+    top: 50%;
+    width: 30%;
+    opacity: 25%;
+    transform: translate(0, -50%)
+}
+
+header {
+    flex: 1;
+}
+
+h1 {
+    font-size: 48px;
+    padding-bottom: 10px;
+}
+
+p {
+    padding-bottom: 12px;
+    font-size:20px;
+    font-weight: 400;
+}
+
+a {
+    position: relative;
+    color: var(--green);
+    text-decoration: none;
+}
+
+a:after {
+    content: "";
+    width: 0%;
+    height: 3px;
+    position: absolute;
+    top: 100%;
+    left:0;
+    background: var(--green);
+    background: linear-gradient(90deg, transparent, var(--green));
+    transition: width 0.3s;
+}
+
+a:hover:after {
+    width: 100%;
+}
+
+main {
+    display: flex;
+}
+
+section:first-child {
+    margin-right: 100px;
+}
+
+.person_img {
+   width: 200px;
+   height: 200px; 
+   margin-top: 24px;
+}
+
+.person_img img {
+    width: 100%;
+}
+
+.person_name {
+    display: block;
+    margin-top: 22px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    background: linear-gradient(90deg, var(--green), #fff);
+    color: transparent;
+    -webkit-background-clip: text;
+    
+}
+
+button {
+    width: 350px;
+    padding: 16px 0;
+    margin-top: 26px;
+    font-size: 42px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--green);
+    background: linear-gradient(to right top, var(--green), rgba(255, 255, 255, 0.6));
+    border: none;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+
+}
+
+button:focus {
+    outline-color: #fff;
+}
+
+button:after {
+    width: 50px;
+    height: 150%;
+    position: absolute;
+    left: -80px;
+    top: -25px;
+    content:  "";
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: rotate(20deg);
+    transition: transform 0.5s;
+}
+
+button:hover::after {
+    transform:translateX(460px) rotate(20deg);
+}
+
+@keyframes slideDown {
+    from {transform: translateY(-20vh);}
+    to {transform: translateY(100vh);}
+}
+
+@keyframes slideDown2 {
+    from {transform: translateY(-20vh);}
+    to {transform: translateY(120vh);}
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+}
